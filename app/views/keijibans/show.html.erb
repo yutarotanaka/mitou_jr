@@ -7,8 +7,15 @@
 
 <p>
   <strong>User:</strong>
-  <%= @keijiban.user_id %>
+  <% @user = User.find_by(id: @keijiban.user_id) %>
+  <%= @user_id %>
 </p>
+
+<p>
+  <strong>Pictures:</strong>
+  <%= image_tag keijiban.picture.url if keijiban.picture? %>
+</p>
+
 
 <%= link_to 'Edit', edit_keijiban_path(@keijiban) %> |
 <%= link_to 'Back', keijibans_path %>

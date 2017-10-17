@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919032400) do
+ActiveRecord::Schema.define(version: 20171015124814) do
 
   create_table "keijibans", force: :cascade do |t|
     t.text     "content"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20170919032400) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "username"
+    t.string   "documents"
+    t.string   "picture"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "todo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "todos", force: :cascade do |t|
@@ -45,8 +54,11 @@ ActiveRecord::Schema.define(version: 20170919032400) do
     t.string   "email"
     t.string   "password"
     t.string   "universal"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "activation_digest"
+    t.boolean  "activated"
+    t.datetime "activated_at"
   end
 
 end

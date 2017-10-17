@@ -1,0 +1,53 @@
+body {
+    background-color: #fff799;
+}
+
+h1 {
+    color: #6c3524;
+    font-family: Avenir-Next;
+    font-size: 60px;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+ .name{
+     font-size: 30px;
+     color: #6c3542;
+     padding-bottom: 10px;
+     padding-left: 150px;
+ }
+ 
+ .textbox{
+    width: 1000px;
+    height: 150px;
+    padding-bottom: 0px;
+    padding-left: 150px;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    background: #6c3524;/*ボタン色*/
+    color: #FFF;
+    font-size: 20px;
+    border-bottom: solid;
+    border-radius: 3px;
+}
+
+
+input[type="submit"]:active{
+    -ms-transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);/*下に動く*/
+    border-bottom: none; 
+}
+
+.button{
+    padding-top: 50px;
+    padding-left: 800px;
+}

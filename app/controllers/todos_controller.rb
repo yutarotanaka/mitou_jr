@@ -13,8 +13,10 @@ class TodosController < ApplicationController
     end
     
     def todo_detail
+        @current_user = User.find_by(id: session[:user_id])
         @todo = Todo.find_by(id: params[:id])
         @id = params[:id]
+        @likes_count = Like.where(todo_id: @todo.id).count
     end
     
     def todo_edit

@@ -13,9 +13,11 @@
 
   <tbody>
     <% @keijibans.each do |keijiban| %>
+    <% @user = User.find_by(id: keijiban.user_id) %>
       <tr>
         <td><%= keijiban.content %></td>
-        <td><%= keijiban.user_id %></td>
+        <td><%= @user.name %></td>
+        <td><%= image_tag keijiban.picture.url if keijiban.picture? %></td>
         <td><%= link_to '表示', keijiban %></td>
         <td><%= link_to '変更', edit_keijiban_path(keijiban) %></td>
         <td><%= link_to '消去', keijiban, method: :delete, data: { confirm: 'Are you sure?' } %></td>

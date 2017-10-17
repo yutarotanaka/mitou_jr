@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "Welcome to the Papa!"
-      UserMailer.welcome_email(@user).deliver_later
+      #UserMailer.welcome_email(@user).deliver_later
       redirect_to("/users/#{@user.id}")
      else
       redirect_to :signup, :alert => "errorが起きました"
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
       redirect_to("/users/#{@user.id}")
     else
       redirect_to("/login_form")
-      flash[:alert] = "Invalid email/password combination"
+      flash[:alert] = "＜Login失敗＞"<br>"※EmailまたはPasswordが間違っていませんか？"<br>"もう一度打ち直してください"
     end
   end
   

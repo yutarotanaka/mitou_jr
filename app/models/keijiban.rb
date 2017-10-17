@@ -1,4 +1,5 @@
 class Keijiban < ActiveRecord::Base
-    belongs_to :user
-    validates :content, length: { maximum: 500 }
+    belongs_to :users
+    validates :content, length: { maximum: 50000 }
+    mount_uploader :picture, PictureUploader
 end

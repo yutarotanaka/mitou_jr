@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
   
-  root 'static_pages_#home'
+  get 'static_pages/start' => 'static_pages_#start'
+  get 'static_pages/console' => 'static_pages_#console'
+  get 'static_pages/help' => 'static_pages_#help'
+  get 'static_pages/about' => 'static_pages_#about'
+  get 'static_pages/user_home' => 'static_pages_#user_home'
 
-  get  'static_pages/home' => 'static_pages_#home'
-  get  'static_pages/help' => 'static_pages_#help'
-  get  'static_pages/user_home' => 'static_pages_#user_home'
-  
-  
+  root 'static_pages_#start'
+
   resources :keijibans
+  resources :account_activations, only: [:edit]
+  
+  post "likes/:todo_id/create" => "likes#create"
+  
+  post "likes/:todo_id/destroy" => "likes#destroy"
+
   
   post '/users/todos/:id/update' =>'todos#todo_update'
   

@@ -2,27 +2,26 @@
 <html>
 <head>
   <title>PaPa</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 
 <body>
-  <h1>PAPA: Personal Assistant Parent Application</h1>
-  <header>
+<%= image_tag ('PAPA.PNG'), :width => '120', :height => '37' %>
+<header>
     <% if session[:user_id] %>
       <% current_user = User.find_by(id: session[:user_id]) %>
       <i><%= link_to(current_user.name, "/users/#{current_user.id}") %></i>
       <%= link_to("keijiban", "/keijibans") %>
-      <%= link_to("mytodos", "/todos") %>
-      <%= link_to("myhome", "/static_pages/user_home") %>
-      <%= link_to("logout", "/logout") %>
+      <%= link_to image_tag("todo.jpg", :size => "30x30"), "/users/:id" %>
+      <%= link_to image_tag("home.jpg",:size => "30x30"), "/static_pages/user_home"%>
+      <%= link_to image_tag("help.jpg", :size => "30x30"),"/static_pages/help"%>
+      <%= link_to image_tag("logout.jpg",:size => "30x30"), "/logout" %>
     <% else %>
-      <%= link_to("signup", "/signup") %>
-      <%= link_to("login", "/login_form") %>
-      <%= link_to("keijiban", "/keijibans") %>
-      <%= link_to("home", "/static_pages/home") %>
-      <%= link_to("mytodos", "/todos") %> 
+      <%= link_to image_tag("signup.jpg", :size => "30x30"), "/signup" %>
+      <%= link_to image_tag("login.jpg", :size => "30x30"), "/login_form" %>
     <% end %>
   </header>
 

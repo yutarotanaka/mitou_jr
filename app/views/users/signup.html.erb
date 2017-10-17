@@ -1,19 +1,39 @@
-<h3>Signup</h3>
+<html>
+<head>
+   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="signup.scss">
+    
+   
+</head>
+<body>
+<h1>Signup</h1>
 
 <%= form_tag("/create") do %>
 
-    <div>Your Name</div>
-
-        <input name="name">
-        
-    <div>Email</div>    
+    <div class="name">Your Name</div>
     
-        <input name="email">
-
-    <div>Password</div>
+<div class="textbox">
+        <input name="name" size=40 style="font-size:30px;">
+        </div>
+    <div class="name">Email</div>    
     
-        <input name="password" type="password">
+    <div class="textbox">
+        <input name="email" size=40 style="font-size:30px;">
+
+   </div>
+    <div class="name">Password</div>
+    
+        <div class="textbox">
+        <input name="password" type="password" size=40 style="font-size:30px;">
+        </div>
         
+        <div class="button">
     <input type="submit" value="signup">
-    
+    </div>
+    </body>
 <% end %>
+</html>

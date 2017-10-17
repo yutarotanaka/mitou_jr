@@ -1,15 +1,30 @@
-<h3>Todo Detail</h3>
 
-<%= @todo.title %>
+ <h2>Todo Detail</h2>
+   <div class="memox huifont">
+     
+       <h4>Title</h4>
+       <li><%= @todo.title %></li>
+</br>
+       <h4>Content</h4>
+       <li><%= @todo.content %></li>
+
+    <% if Like.find_by(user_id: @current_user.id, todo_id: @todo.id) %>
+        <%= link_to("/likes/#{@todo.id}/destroy", {method: "post"}) do %>
+         <span class="fa fa-heart like-btn-unlike"></span>
+          <% end %>
+    <% else %>
+    <%= link_to("/likes/#{@todo.id}/create", {method: "post"}) do %>
+     <span class="fa fa-heart like-btn"></span>
+    <% end %>
+    <% end %>
+       <h4>From</h4>
+       <li><%= @likes_count %></li>
+    
+      </div>
+</br>
+
+<li><%= link_to("Edit", "/users/todos/#{@todo.id}/edit") %></li>
 
 </br>
 
-<%= @todo.content %>
-
-</br>
-
-<%= link_to("Edit", "/users/todos/#{@todo.id}/edit") %>
-
-</br>
-
-<%= link_to("Delete", "/users/todos/#{@todo.id}/destroy") %>
+<li><%= link_to("Delete", "/users/todos/#{@todo.id}/destroy") %></li>

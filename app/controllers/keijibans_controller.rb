@@ -70,5 +70,6 @@ class KeijibansController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def keijiban_params
       params.require(:keijiban).permit(:content, :user_id)
+      params.require(:keijiban).permit(:content, :picture)
     end
 end

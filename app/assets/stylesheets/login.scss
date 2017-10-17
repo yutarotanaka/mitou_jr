@@ -1,0 +1,59 @@
+h1 {
+    color: #6c3524;
+    font-family: Avenir-Next;
+    font-size: 60px;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.name{
+     font-size: 30px;
+     color: #6c3542;
+     margin-top: 20px;
+     padding-left: 150px;
+ }
+ 
+ .textbox{
+    width: 800px;
+    height: 150px;
+    padding-bottom: 0px;
+    padding-left: 150px;
+}
+
+input[type="submit"] {
+     display: inline-block;
+    width: 120px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    background: #6c3524;/*ボタン色*/
+    color: #FFF;
+    font-size: 20px;
+    border-bottom: solid;
+    border-radius: 3px;
+    
+}
+
+
+input[type="submit"]:active{
+    -ms-transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);/*下に動く*/
+    border-bottom: none; 
+}
+
+.button{
+    margin-top: 10px;
+    padding-left: 800px;
+}
+
+.error{
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 150px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 3px #ff7d6e;
+}

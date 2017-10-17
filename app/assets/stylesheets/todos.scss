@@ -1,3 +1,140 @@
 // Place all the styles related to the todos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+ h2 {
+    background: #6c3524;/*背景色*/
+    padding: 0.5em;/*文字まわり（上下左右）の余白*/
+    color: #ffffff;
+    font-family: Avenir-Next;
+    font-size: 50px;
+    
+}
+
+h3 {
+    color: #6c3524;
+    font-family: Avenir-Next;
+    font-size: 30px;
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+h4{ 
+    color: #6c3524;
+    font-size: 30px;
+    padding-left: 0px;
+    padding-top: 10px;
+  transform: rotate(-1deg);
+   font-family:HuiFontP109;
+   src:url(/fonts/public/HuiFont/HuiFontP109.eot);
+   src:
+   url(/fonts/public/HuiFont/HuiFontP109.eot?#iefix) format('embedded-opentype'),
+   url(/fonts/public/HuiFont/HuiFontP109.woff) format('woff'),
+   url(/fonts/public/HuiFont/HuiFontP109.ttf) format('truetype'),
+   url(/fonts/public/HuiFont/HuiFontP109.svg#HuiFontP109) format('svg');
+}
+
+
+
+li{
+   list-style: none;
+   color: #6c3524;
+    font-family: Avenir-Next;
+    font-size: 20px;
+    padding-left: 25px;
+}
+
+input[type="text"]{
+    width: 200px;
+    height: 20px;
+}
+input[type="title"]{
+    width: 200px;
+    height: 20px;
+}
+
+.title{
+    width: 300px;
+    height: 30px;
+}
+
+textarea
+{
+    width: 300px;
+    height: 200px;
+}
+
+input[type="checkbox"]{
+    -webkit-transform: scale(2.0);
+   transform: scale(2.0);
+   margin-right: 0.5em;
+}
+
+._name{
+    color: #6c3524;
+    font-family: Avenir-Next;
+    font-size: 30px;
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+
+
+.scroll_button_btm a{
+    position: fixed;
+    display: block;
+    right:50px;
+    bottom:50px;
+    background: #313131;
+    color:#fff;
+    padding:20px;
+}
+
+.memox{
+   position:relative;
+   background:#fffde7;
+   width: 85%;
+   margin: 2em auto;
+   padding: 1.5em 1em;
+   transform: rotate(-2deg);
+   box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+   color:#795548;
+}
+.memox::before{
+   content: "To do";
+   position: relative;
+   display: inline-block;
+   padding: 0.2em 0.1em 0.2em;
+   border-bottom: 3px solid #795548;
+   border-radius: 0 0 40% 5% / 0 0 15% 20%;
+   font-size: 150%;
+   font-weight: bold;
+   transform: rotate(-5deg);
+}
+.memox::after{
+   content:"";
+   position: absolute;
+   left: 50%;
+   top: -15px;
+   margin-left:-75px;
+   width: 150px;
+   height: 30px;
+   background: rgba(245,245,245,0.7);
+   box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+   transform: rotate(-2deg);
+}
+.memox ol{
+   margin: 1em 0.5em 0 2em;
+   padding: 0 0 0 0;
+}
+.memox ol li{
+   margin-bottom: 0.5em;
+}
