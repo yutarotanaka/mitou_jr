@@ -8,17 +8,19 @@
        <h4>Content</h4>
        <li><%= @todo.content %></li>
 
+       <h4>Likes</h4>
+
     <% if Like.find_by(user_id: @current_user.id, todo_id: @todo.id) %>
-        <%= link_to("/likes/#{@todo.id}/destroy", {method: "post"}) do %>
-         <span class="fa fa-heart like-btn-unlike"></span>
-          <% end %>
-    <% else %>
+    <%= link_to("/likes/#{@todo.id}/destroy", {method: "post"}) do %>
+     <span class="fa fa-heart like-btn-unlike"></span>
+    <% end %>
+<% else %>
     <%= link_to("/likes/#{@todo.id}/create", {method: "post"}) do %>
      <span class="fa fa-heart like-btn"></span>
     <% end %>
-    <% end %>
-       <h4>From</h4>
-       <li><%= @likes_count %></li>
+<% end %>
+      <%= @likes_count %>
+       
     
       </div>
 </br>

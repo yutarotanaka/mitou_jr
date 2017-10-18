@@ -53,7 +53,8 @@
     </br>
     
 <%
-=end %>
+=end 
+%>
     
     <% @todos = Todo.where("(user_id = ?) OR (universal = ?)", @id, true) %>
     
@@ -61,6 +62,7 @@
     
     <% @deadlines.uniq.each do |deadline| %>
     
+        <br/>
         
             <h3><b><%= deadline.deadline %></b></h3>
     
