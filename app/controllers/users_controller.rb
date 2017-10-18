@@ -36,8 +36,8 @@ class UsersController < ApplicationController
       #UserMailer.welcome_email(@user).deliver_later
       redirect_to("/users/#{@user.id}")
     else
+      flash[:alert] = "＜Login失敗＞　※EmailまたはPasswordが間違っていませんか？　もう一度打ち直してください"
       redirect_to("/login_form")
-      flash[:alert] = "＜Login失敗＞"<br>"※EmailまたはPasswordが間違っていませんか？"<br>"もう一度打ち直してください"
     end
   end
   
