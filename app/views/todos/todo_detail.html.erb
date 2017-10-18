@@ -6,7 +6,8 @@
        <li><%= @todo.title %></li>
 </br>
        <h4>Content</h4>
-       <li><%= @todo.content %></li>
+       
+       <%= simple_format(@todo.content) %>
 
        <h4>Likes</h4>
 

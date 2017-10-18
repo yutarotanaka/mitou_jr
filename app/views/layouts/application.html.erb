@@ -14,15 +14,15 @@
 <header>
     <% if session[:user_id] %>
       <% current_user = User.find_by(id: session[:user_id]) %>
-      <i><%= link_to(current_user.name, "/users/#{current_user.id}") %></i>
-      <%= link_to("keijiban", "/keijibans") %>
-      <%= link_to image_tag("todo.jpg", :size => "30x30"), "/users/:id" %>
-      <%= link_to image_tag("home.jpg",:size => "30x30"), "/static_pages/console"%>
-      <%= link_to image_tag("help.jpg", :size => "30x30"),"/static_pages/help"%>
-      <%= link_to image_tag("logout.jpg",:size => "30x30"), "/logout" %>
+      <i><b><%= link_to(current_user.name, "/users/#{current_user.id}") %></b></i>
+      <span class="keijiban"><%= link_to("keijiban", "/keijibans") %></span>
+      <%= link_to image_tag("todo.jpg", :size => "40x40"), "/users/:id" %>
+      <%= link_to image_tag("home.jpg",:size => "40x40"), "/static_pages/console"%>
+      <%= link_to image_tag("help.jpg", :size => "40x40"),"/static_pages/help"%>
+      <%= link_to image_tag("logout.jpg",:size => "40x40"), "/logout" %>
     <% else %>
-      <%= link_to image_tag("signup.jpg", :size => "30x30"), "/signup" %>
-      <%= link_to image_tag("login.jpg", :size => "30x30"), "/login_form" %>
+      <%= link_to image_tag("signup.jpg", :size => "40x40"), "/signup" %>
+      <%= link_to image_tag("login.jpg", :size => "40x40"), "/login_form" %>
     <% end %>
   </header>
 
