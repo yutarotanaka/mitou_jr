@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   get 'static_pages/start' => 'static_pages_#start'
   get 'static_pages/console' => 'static_pages_#console'
   get 'static_pages/help' => 'static_pages_#help'
   get 'static_pages/about' => 'static_pages_#about'
   get 'static_pages/user_home' => 'static_pages_#user_home'
 
-  root 'static_pages_#start'
+  root 'users#login_form'
 
   resources :keijibans
   resources :account_activations, only: [:edit]

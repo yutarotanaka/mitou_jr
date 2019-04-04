@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   
   before_action :set_current_user
   
+  
   def home
     @user = User.find_by(id:session[:user_id])
     if @user
@@ -16,6 +17,7 @@ class ApplicationController < ActionController::Base
   
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
+    rescue ActiveRecord::RecordNotFound
   end
   
   def forbid_login_user
@@ -24,5 +26,4 @@ class ApplicationController < ActionController::Base
       redirect_to("/users/#{@current_user.id}")
     end
   end
-  
 end

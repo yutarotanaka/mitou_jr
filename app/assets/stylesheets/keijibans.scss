@@ -1,3 +1,29 @@
 // Place all the styles related to the keijibans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h2 {
+    color: #331513;
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
+    line-height: 1.6em;
+    padding: 0 0 2px 12px;
+    border-left: 10px solid #331513;
+    border-bottom: 2px solid #331513;
+}
+
+th {
+    color: #331513;
+    font-family: Avenir-Next;
+    font-size: 30px;
+    padding-left: 60px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+td {
+    color: #331513;
+    font-family: Avenir-Next;
+    font-size: 30px;
+    padding-left: 60px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}

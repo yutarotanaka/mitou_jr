@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>掲示板</h1>
+<h2>掲示板</h2>
 
-<table>
+<table border="1">
   <thead>
     <tr>
-      <th>Content</th>
-      <th>User</th>
+      <th>投稿</th>
+      <th>ユーザー</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @keijibans.each do |keijiban| %>
-    <% @user = User.find(keijiban.user_id) %>
+    <% @user = User.find_by(id: keijiban.user_id) %>
       <tr>
         <td><%= keijiban.content %></td>
         <td><%= @user.name %></td>
@@ -28,4 +28,5 @@
 
 <br>
 
-<%= link_to 'New Keijiban', new_keijiban_path %>
+<%= link_to "新規投稿", new_keijiban_path %>
+

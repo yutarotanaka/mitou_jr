@@ -8,12 +8,12 @@
 <p>
   <strong>User:</strong>
   <% @user = User.find_by(id: @keijiban.user_id) %>
-  <%= @user_id %>
+  <%= @user.name %>
 </p>
 
 <p>
   <strong>Pictures:</strong>
-  <%= image_tag keijiban.picture.url if keijiban.picture? %>
+  <%= image_tag @keijiban.picture.url if @keijiban.picture? %>
 </p>
 
 

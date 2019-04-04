@@ -1,9 +1,12 @@
 class StaticPagesController < ApplicationController
   
-  before_action :forbid_login_user, {only: [:start]}
+  before_action :set_current_user
   
   def start
     render :layout => false and return
+    if @current_user
+       redirect_to("/users/#{@user.id}")
+    end
   end
 
   def console

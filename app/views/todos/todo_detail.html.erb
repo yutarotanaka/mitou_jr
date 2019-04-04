@@ -1,3 +1,17 @@
+<head>
+    
+<style type="text/css">
+
+    /**a:link { color: #331513; }
+    a:visited { color:#331513; }
+    a:hover { color: #4d4d4d; }
+    a:active { color:#331513; }
+
+</style>
+
+    
+</head>
+
 
  <h2>Todo Detail</h2>
    <div class="memox huifont">
@@ -6,13 +20,12 @@
        <li><%= @todo.title %></li>
 </br>
        <h4>Content</h4>
-       
-       <%= simple_format(@todo.content) %>
+       <div class="_naiyou"><li><%= simple_format(@todo.content) %></li><div>
 
        <h4>Likes</h4>
 
     <% if Like.find_by(user_id: @current_user.id, todo_id: @todo.id) %>
-    <%= link_to("/likes/#{@todo.id}/destroy", {method: "post"}) do %>
+    <%= link_to("/likes/#{@todo.id}/destroy", {method: "post"}, data: { confirm: 'Are you sure?' }) do %>
      <span class="fa fa-heart like-btn-unlike"></span>
     <% end %>
 <% else %>

@@ -15,6 +15,10 @@ class UsersController < ApplicationController
   end
   
   def login_form
+    @user = User.find_by(id:session[:user_id])
+    if @user
+      redirect_to("/users/#{@user.id}")
+    end
   end
   
   def update
@@ -36,7 +40,7 @@ class UsersController < ApplicationController
       #UserMailer.welcome_email(@user).deliver_later
       redirect_to("/users/#{@user.id}")
     else
-      flash[:alert] = "＜Login失敗＞　※EmailまたはPasswordが間違っていませんか？　もう一度打ち直してください"
+      @error_message = "＜Login失敗＞　※EmailまたはPasswordが間違っていませんか？　もう一度打ち直してください"
       redirect_to("/login_form")
     end
   end
