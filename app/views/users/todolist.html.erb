@@ -65,12 +65,14 @@
     
     <% @deadlines = @todos.select("deadline") %>
     
+<!-- todoをdeadline順に並び替える -->    
     <% @deadlines.uniq.each do |deadline| %>
     
         <br/>
         
             <div class="deadline"><b><%= deadline.deadline %></b></div>
     
+    <!-- 先生のtodo -->
           <% @todo_universal = Todo.where(deadline: deadline.deadline, universal: true) %>
         
         <% @todo_universal.each do |todo| %>
@@ -81,6 +83,7 @@
            
         <% end %>
     
+    <!-- 生徒のtodo -->
           <% @todo = Todo.where(deadline: deadline.deadline, user_id: @id) %>
         
         <% @todo.each do |todo| %>
@@ -95,6 +98,9 @@
     
     <% end %>
 
+
+
+<!-- todo入力 -->
 
 <% if session[:user_id] == 1 %>
     
